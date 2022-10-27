@@ -1,0 +1,43 @@
+end of linux line
+rd.break enforcing=0
+
+ctrl+x
+
+
+mount -o remount,rw /sysroot/
+chroot /sysroot/
+passwd root
+<change root_passwd>
+
+exit
+exit
+
+restorecon /etc/shadow
+<this restores selinux>
+
+
+cd /etc/sysconfig/network-scripts/
+
+ip : 192.168.1.37
+netmask: 255.255.255.0
+gateway: 192.168.1.1
+<route -n>
+dns:
+<cat /etc/resolv.conf>
+nameserver 192.168.1.1
+hostname:
+localhost.localdomain
+
+systemctl restart network
+systemctl restart NetworkManager
+
+ systemctl stop firewalld
+ systemctl disable  firewalld
+ 
+ 
+ cd /etc/yum.repos.d/
+ 
+ reboot os
+ 
+ hostnamectl set-hostname <hostname>
+
