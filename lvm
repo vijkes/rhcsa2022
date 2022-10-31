@@ -1,0 +1,21 @@
+pvcreate /dev/xvdf
+pvcreate /dev/xvdg
+pvdisplay
+vgcreate vkvg /dev/xvdf /xvdg
+
+
+lvcreate --size 50G --name vklv vkvg
+vgdisplay vg/vk
+mkfs.ext4 /dev/vkvg/vklv
+
+mkdir /l1
+mount /dev/vkvg/vklv /l1
+
+16  lvdisplay
+   17  lvextend --size +200M /dev/vkvg/vklv
+   18  df -hT
+   19  resize2fs /dev/mapper/vkvg-vklv
+ pvcreate /dev/xvdi
+   29  pvdisplay
+   30  fdisk -l
+vgextend vkvg /dev/sdi
