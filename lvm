@@ -19,3 +19,56 @@ mount /dev/vkvg/vklv /l1
    29  pvdisplay
    30  fdisk -l
 vgextend vkvg /dev/sdi
+
+
+
+-----------------------------------------------------reduceLVM----------------------------------------------------------------------------------------------
+
+ fdisk /dev/xvdl
+  106  fdisk -l
+  107  pvcreate /dev/xvdl1
+  108  pvdisplay /dev/xvdl1
+  109  vgcreate vgrise2 /dev/sdl1
+  110  vgdisplay vgrise2
+  111  lvcreate --size 12G --name lv3 vgrise2
+  112  lvcreate --size 8G --name lv4 vgrise2
+  113  lvcreate --size 7G --name lv4 vgrise2
+  114  lvdisplay vgrise2
+  115  lvdisplay
+
+  118  mkfs.ext4 /dev/vgrise2/lv4
+  119  mkfs.ext4 /dev/vgrise2/lv3
+  120  mkdir /part3
+  121  mkdir /part4
+  122  mount /dev/vgrise2/lv3 /part3
+  123  mount /dev/vgrise2/lv4 /part4
+  124  df -hT
+  125  lvextend --size +10G /dev/mapper/vgrise2-lv3
+  126  lvdisplay /lv3
+  127  lvdisplay /dev/vgrise2/lv3
+  128  fdisk -l
+  129  cd /part3
+  130  ll
+  131  mkdir -p {a..z}
+  132  ll
+  133  cd /part4
+  134  mkdir {1..1000}
+  135  ls
+  136  df -hT
+  137  cd ..
+  138  umount /part3
+  139  df -hT
+  140  e2fsck -f /dev/mapper/vgrise2-lv3
+  141  resize2fs /dev/mapper/vgrise2-lv3 8G
+  142  lvdisplay /dev/mapper/vgrise2-lv3
+  143   vgdisplay vgrise2
+  144  lvreduce --size 8G /dev/mapper/vgrise2-lv3
+  145  df -HT
+  146  lvdisplay vgrise2
+  147  vgdisplay vgrise2
+  148  mount /dev/mapper/vgrise2-lv3 /part3
+  149  df -hT
+ 
+  154  lvextend --size +4G /dev/mapper/vgrise2-lv4
+  155  df -hT
+  156  resize2fs /dev/mapper/vgrise2-lv4
