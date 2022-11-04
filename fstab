@@ -1,0 +1,21 @@
+fstab  : file system table
+meant only for partition
+
+
+# devicename mountpoint format options diskcheck disksync
+/dev/mapper/vgrise2-lv3 /part3  ext4    defaults 0      0
+/dev/mapper/vgrise2-lv4 /part4  ext4    defaults 0      0
+
+
+lsblk   list block devices
+
+ blkid - locate/print block device attributes
+
+UUID - universal unique id
+ recommended: do not use name of partition , always us uuid
+
+
+
+# devicename mountpoint format options diskcheck disksync
+ UUID="9c615f84-d551-4487-94b7-fbf8b5e088a5" /part3     ext4       defaults 0      0
+ UUID="767182c7-fef5-4f6b-9b5b-66ca61f82cab"   /part4  ext4       defaults 0      0
