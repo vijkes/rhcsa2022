@@ -1,0 +1,21 @@
+ 286  fdisk /dev/xvdo
+
+  288  lsblk
+  289  mkswap /dev/xvdo1
+  290  swapon -s
+
+  292  swapon /dev/xvdo1
+
+ 
+  296  vim /etc/fstab
+  297  init 6
+  303  vmstat
+
+
+vim  /etc/fstab
+
+/dev/xvdo1      swap    swap    defaults        0       0
+
+
+4GiB ram + 1GiB swap = 5 GiB load it can handle, doesn't mean ram will become 5 GiB
+
