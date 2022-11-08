@@ -1,0 +1,24 @@
+stratis is a command-line tool to create, modify, and destroy
+       Stratis pools, and the filesystems allocated from the pool.
+
+pool,blockdev,filesystem,fs,report,key,daemon
+
+
+
+191  yum install stratisd
+  192   yum install stratis-cli
+  194  systemctl start stratisd
+  195  systemctl enable stratisd
+  196  systemctl status stratisd
+  198  stratis pool list
+ 
+  201  stratis pool create mypool /dev/sdb
+  202  stratis pool list
+ 
+  208  stratis filesystem create mypool mynewpart1
+  209  stratis filesystem
+  210  stratis filesystem list
+  211  mkdir /myspart
+  213  mount  /dev/stratis/mypool/mynewpart1 /myspart
+  215  stratis filesystem -h
+  217  stratis filesystem rename mypool mynewpart1 newpart2
