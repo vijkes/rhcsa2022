@@ -1,0 +1,19 @@
+sudo : super user do
+privilege esclation
+
+ssh -t -l u1 172.31.30.184 sudo yum install vsftpd -y
+ssh -t -l u1 172.31.30.184 sudo yum install vsftpd -y
+sudo -u linux cat /home/lenovo/test.txt
+
+ALL=(ALL)	NOPASSWD: ALL
+
+ALL: any host can login will have all the permission
+ALL: (u1, lenovo) any user including root
+ALL: can exe. all cmd
+
+we can have group of user with similar permission we have to add % in front of group name  %
+%vk
+
+vim /etc/sudoers
+visudo  (similar to visudo with spelling mistake check)
+
