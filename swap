@@ -11,8 +11,19 @@
   297  init 6
   303  vmstat
 
+=========================
+change priority
+
+  575  swapoff /dev/sdb1
+  579  swapon -p 1 /dev/sdb1
+  583  cat /etc/fstab
+  598  swapon -s
+  =========================
 
 vim  /etc/fstab
+
+
+devicename	mountpoint	format	options	diskcheck	disksync
 
 /dev/xvdo1      swap    swap    defaults        0       0
 
