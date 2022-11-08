@@ -1,0 +1,9 @@
+#min hours date month day cmd/program/job
+
+#Tue Nov  8 04:08:43 EST 2022
+
+20 4 8 11 * mkdir /mycrondir
+
+
+  260  crontab -e
+  261  crontab -l
