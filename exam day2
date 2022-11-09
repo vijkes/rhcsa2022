@@ -1,0 +1,31 @@
+systemctl get-default
+systemctl set-default multi-user.target
+
+
+
+hostnamectl set-hostname <hostName>
+hostnamectl
+
+
+
+find /usr/bin/ -user root -exec cp{} /tmp/rootfiles/
+
+/etc/skel/ (skel is derived from the “skeleton”)
+
+vim /etc/login.defs
+
+
+
+setfacl -m u:cosmo:rw fstab
+setfacl -m u:petermen:--- fstab
+getfacl fstab
+
+
+45 0 * * * find /tmp -type f -empty -delete
+
+
+  478  tar -zjvf /backup/newetc.tar.bz2 /etc
+  489  mkdir /restored/newetc
+  491  tar -vxf /backup/newetc.tar.bz2 -C /restored/newetc/
+
+
