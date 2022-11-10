@@ -72,3 +72,21 @@ vgextend vkvg /dev/sdi
   154  lvextend --size +4G /dev/mapper/vgrise2-lv4
   155  df -hT
   156  resize2fs /dev/mapper/vgrise2-lv4
+  
+  
+  
+  
+  ==========================================================================================================
+  
+  xfs
+create lvcreate, mkfs.xfs, mount
+extend lvextend --size, xfs_growfs
+#reduce umount, e2fsck -f , resize
+
+ext4
+create	lvcreate, mkfs.ext4, mount
+extend	lvextend --size , resize2fs
+reduce	umount, e2fsck -f, resize2fs, lvreduce, mount
+
+mount -a
+
