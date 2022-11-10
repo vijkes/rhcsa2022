@@ -17,6 +17,7 @@ restorecon /etc/shadow
 
 
 cd /etc/sysconfig/network-scripts/
+vim /etc/sysconfig/network
 
 ip : 192.168.1.37
 netmask: 255.255.255.0
