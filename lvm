@@ -90,3 +90,19 @@ reduce	umount, e2fsck -f, resize2fs, lvreduce, mount
 
 mount -a
 
+==========================================================================================================
+reduce xfs filesystem
+
+ 963  umount /dev/mapper/vg10-lv10xc
+  964  df -hT
+  965  lvreduce --size 1800M /dev/mapper/vg10-lv10xc
+  966  mkfs.xfs /dev/vg10/lv10xc
+  967  mkfs.xfs /dev/mapper/vg10-lv10xc
+  968  history
+  969  mkfs.xfs -f /dev/vg10/lv10xc
+  970  mount /dev/mapper/vg10-lv10xc /lv10xc
+  971  df -hT
+  972  xfsrestore -f /tmp/test5.dump /lv10xc
+  973  cd /lv10xc
+
+
