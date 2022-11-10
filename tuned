@@ -1,0 +1,14 @@
+1029  yum install tuned
+ 1030  tuned
+
+ 1032  systemctl status tuned
+ 1033  tuned-adm
+
+ 1035  tuned-adm
+ 
+ 1038  tuned-adm -h
+ 1039  tuned-adm recommend
+ 1040  tuned-adm profile virtual-guest
+
+ 1042  tuned-adm list
+ 1044  history
