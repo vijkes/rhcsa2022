@@ -4,6 +4,8 @@ send data to hdd after writing to mountpoint and compress/optimize it automatica
 
 
 
+fdisk <device>
+udevadm settle <USED TO LOAD DRIVER OF NEW PARTITION>
 
 225  yum install vdo -y
   226  vdo list
