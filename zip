@@ -1,0 +1,2 @@
+1035  tar -czf /root/new.tgz /usr/share
+ 1036  tar -cjf /root/new.tbz /usr/share
