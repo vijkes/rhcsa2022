@@ -20,3 +20,5 @@ udevadm settle <USED TO LOAD DRIVER OF NEW PARTITION>
   240  mount /dev/mapper/myvdo1 /myvdo
   
   246  vdostats --human-readable
+  
+  /dev/vdo /mnt/data xfs defaults,x-systemd.requires=vdo.service
