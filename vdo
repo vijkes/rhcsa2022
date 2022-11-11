@@ -21,4 +21,4 @@ udevadm settle <USED TO LOAD DRIVER OF NEW PARTITION>
   
   246  vdostats --human-readable
   
-  /dev/vdo /mnt/data xfs defaults,x-systemd.requires=vdo.service
+  /dev/vdo /mnt/data xfs defaults,x-systemd.requires=vdo.service 0 0
