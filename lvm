@@ -106,3 +106,5 @@ reduce xfs filesystem
   973  cd /lv10xc
 
 
+
+vgcreate -s 16M vg101 /dev/sde2
