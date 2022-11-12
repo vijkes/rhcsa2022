@@ -41,4 +41,7 @@ systemctl restart NetworkManager
  reboot os
  
  hostnamectl set-hostname <hostname>
+ 
+ 
+ semanage port -a -t http port t -p tcp 82
 
