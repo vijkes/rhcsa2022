@@ -1,0 +1,17 @@
+
+vim /etc/sysctl.conf
+net.ipv4.ip_forward=1
+cat /proc/sys/net/ipv4/ip_forward
+
+*****
+min
+hr
+1-31
+1-12
+sun-sat
+
+
+tuned-adm list
+tuned-adm profile virtual-guest powersave
+tuned-adm active
+
