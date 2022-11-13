@@ -45,3 +45,6 @@ systemctl restart NetworkManager
  
  semanage port -a -t http port t -p tcp 82
 
+
+hostnamectl set-hostname <hostname1>
+exec bash
