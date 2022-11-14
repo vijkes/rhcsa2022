@@ -23,3 +23,7 @@ echo "mount /dev/cdrom /dvd" >> ~/.bashrc
 
 chronyc sources
 userdel -r <usrName>
+
+find / -user joe
+
+semanage port -a -t http_port_t -p tcp 82
