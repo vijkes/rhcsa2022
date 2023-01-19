@@ -1,0 +1,24 @@
+podman run --privileged -itd --name vkos4 -p 8093:80 -v /home/vk/webdir/:/usr/local/apache2/htdocs 6e794a483258
+
+mkdir -p ~/.config/systemd/user
+
+podman generate systemd vkos4 > ~/.config/systemd/user/vkos4-container.service
+
+vim ~/.config/systemd/user/vkos4-container.service
+<edit last line default.service>
+
+systemctl --user daemon-reload
+systemctl --user start vkos4-container.service
+systemctl --user status vkos4-container.service
+systemctl --user enable vkos4-container.service
+
+
+
+==========================root========================================================
+
+podman run -d --privileged --name os12 -p 8091:80 -v /myweb:/usr/local/apache2/htdocs 6e794a4
+curl localhost:8091/page.html
+podman generate systemd os12 > /etc/systemd/system/os12-container.service
+systemctl daemon-reloadsystemctl start os12-container.service
+systemctl status os12-container.service
+systemctl enable os12-container.service
