@@ -1,0 +1,33 @@
+-------------server--------------
+
+yum install nfs* -y
+systemctl enable nfs-server
+vim /etc/exports
+<   /share 192.168.1.215(rw,no_root_squash)   >
+
+exportfs -avrf
+
+firewall-cmd --add-service={nfs,mountd,rpc-bind} --permanent
+firewall-cmd --reload
+
+---------client-----------
+
+yum install nfs-utils
+mount ip:/path /receive
+
+=========client for autofs=================
+
+
+yum install nfs-utils autofs -y
+systemctl enable nfs-utils
+showmount -e <serverIP>
+
+vim /etc/auto.master
+/auto_mount /etc/auto.misc --timeout=30
+
+
+vim /etc/auto.misc
+access	-rw,soft,intr	<serverIP>:/share
+
+systemctl enable autofs --now
+
