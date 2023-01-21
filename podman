@@ -5,7 +5,7 @@ mkdir -p ~/.config/systemd/user
 podman generate systemd vkos4 > ~/.config/systemd/user/vkos4-container.service
 
 vim ~/.config/systemd/user/vkos4-container.service
-<edit last line default.service>
+<edit last line to WantedBy=default.service>
 
 systemctl --user daemon-reload
 systemctl --user start vkos4-container.service
