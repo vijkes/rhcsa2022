@@ -1,3 +1,9 @@
+yum install podman @container-tools
+podman login registry.redhat.io
+podman search httpd
+podman pull docker.io/library/httpd
+
+
 podman run --privileged -itd --name vkos4 -p 8093:80 -v /home/vk/webdir/:/usr/local/apache2/htdocs 6e794a483258
 
 mkdir -p ~/.config/systemd/user
