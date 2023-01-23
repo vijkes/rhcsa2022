@@ -1,0 +1,14 @@
+step1:
+root password reset
+
+step2:
+configure ip
+
+step3:
+stop and disable firewalld
+
+step4:
+enable selinux
+
+step5:
+setup yum
